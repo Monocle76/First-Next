@@ -3,21 +3,20 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Container from "./components/Container";
 
-export default function Apihello() {
-
-  var [name, setName] = useState("")
-  const router = useRouter();
-
-  async function getData() {
-    var response = await fetch("/api/hello");
-    var data = await response.json();
-    setName(data.name)
+export async function getServerSideProps() {
+  var URL = "https://jocular-croquembouche-f26e9d.netlify.app";
+  var response = await fetch(URL + "/api/hello");
+  var data = await response.json();
+  return {
+    props: {
+      data,
+    }
   }
+}
 
-  useEffect(() => {
-    getData()
-  }, [])
-
+export default function Apihello({ data }) {
+  var router = useRouter();
+  var name = data.name;
   return (
     <Container heading={"API Data"}>
       <Link href={"#"} onClick={() => router.back()}>Back</Link>
