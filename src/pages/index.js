@@ -11,6 +11,7 @@ function App() {
       <div className="links">
         <Link href={"/hello"}>Hello</Link>
         <Link href={"/api/hello"}>API Hello</Link>
+        <Link href={"/apihello"}>SSR Hello</Link>
       </div>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae possimus incidunt omnis atque? Velit ratione nostrum deserunt culpa recusandae modi maiores, vel quaerat dicta laudantium, harum explicabo in ex beatae saepe ipsam reiciendis aut fugit error veritatis nam impedit debitis possimus. Numquam deleniti aliquid modi suscipit illo quo laboriosam perspiciatis?</p>
       <div className="form">
